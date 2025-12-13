@@ -1,0 +1,39 @@
+/* =========================
+   FINAL 3D GLASSMORPHISM CSS
+   ========================= */
+
+/* --- Genel Reset ve Font Ayarları --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* --- Ana Konteyner --- */
+.container {
+    width: 95%;
+    max-width: 960px;
+    height: 90vh;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 30px rgba(0,0,0,0.05) inset;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* --- Başlık --- */
+.header {
+    background: rgba(26, 47, 74, 0.85);
