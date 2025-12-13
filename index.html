@@ -3,17 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chat</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Evolution Dashboard | Ultra Glass Edition V3.0</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> 
+
 </head>
 <body>
-    <div id="app">
-        <h2>AI Chat</h2>
-        <div id="chat-box"></div>
-        <input id="user-input" type="text" placeholder="Mesaj yaz...">
-        <button id="send-btn">Gönder</button>
+    
+    <div class="container" role="main">
+        
+        <header class="header">
+            <div class="logo" aria-label="Dashboard Ana Sayfa">
+                EVOLUTION <span style="color: var(--secondary-color);">DASH</span>BOARD
+            </div>
+            <nav aria-label="Ana Navigasyon">
+                <ul>
+                    <li><a href="#" aria-current="page">Genel Bakış</a></li>
+                    <li><a href="#">Analitik</a></li>
+                    <li><a href="#">Raporlar</a></li>
+                    <li><a href="#">Kullanıcılar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content-area">
+            
+            <section class="status-row" aria-label="Özet Metrikler">
+                <article class="card card-mini" role="status">
+                    <h3>💰 Toplam Gelir</h3>
+                    <p style="font-size: 2.8em; font-weight: 900; color: var(--primary-color);">$2.1M</p>
+                    <small style="color: green; font-weight: 700;">▲ +15% (Q3)</small>
+                </article>
+                <article class="card card-mini" role="status">
+                    <h3>🟢 Aktif Kullanıcı</h3>
+                    <p style="font-size: 2.8em; font-weight: 900; color: var(--primary-color);">45,870</p>
+                    <small style="color: green; font-weight: 700;">▲ +8.2% (Bugün)</small>
+                </article>
+                <article class="card card-mini" role="status">
+                    <h3>⚙ Sistem Performansı</h3>
+                    <p style="font-size: 2.8em; font-weight: 900; color: var(--primary-color);">99.99%</p>
+                    <small style="color: var(--secondary-color); font-weight: 700;">Uptime Garantisi</small>
+                </article>
+                <article class="card card-mini" role="status">
+                    <h3>🔥 Yeni Abonelikler</h3>
+                    <p style="font-size: 2.8em; font-weight: 900; color: var(--primary-color);">85</p>
+                    <small style="color: orange; font-weight: 700;">▼ -2.1% (Geçen Hafta)</small>
+                </article>
+            </section>
+
+            <section class="card main-chart">
+                <h3>Genel Trend Analizi ve Büyüme Grafiği</h3>
+                <div class="placeholder-content">
+                    <p>Yüksek Çözünürlüklü İnteraktif Grafik Alanı (9 Sütunluk Alanı Kaplar)</p>
+                </div>
+            </section>
+            
+            <aside class="card sidebar">
+                <h3>🔔 Son Kritik Aktiviteler</h3>
+                <ul class="activity-list">
+                    <li>*06:15 PM:* Yeni kayıt (Premium) tamamlandı.</li>
+                    <li>*04:30 PM:* Sunucu B'de yoğun trafik uyarısı.</li>
+                    <li>*03:00 PM:* Yeni Pazarlama raporu hazır.</li>
+                    <li>*11:45 AM:* Kullanıcı geri bildirimi alındı.</li>
+                </ul>
+                
+                <div id="ai-interface-area">
+                    <h3 style="margin-top: 5px;">🤖 Akademik AI Modülü</h3>
+                    
+                    <textarea id="user-input" placeholder="Örn: integral x*e^x ya da Felsefe Zirvesi hakkında bilgi ver." 
+                              rows="4" class="ai-input-field"></textarea>
+                    
+                    <button id="send-button" class="ai-button" onclick="processUserInput()">
+                        Analiz Et ve Yanıtla
+                    </button>
+                    
+                    <div id="ai-response" class="ai-response-display">
+                        *Durum:* Hazır. Komutunuzu bekliyorum.
+                    </div>
+                </div>
+                
+            </aside>
+            
+            <section class="card geo-performance">
+                <h3>📊 Coğrafi Performans Dağılımı</h3>
+                </section>
+
+            <article class="card system-checks">
+                <h3>⚙ Hızlı Sistem Kontrolleri</h3>
+                </article>
+            
+        </div>
     </div>
 
     <script src="script.js"></script>
+    
 </body>
 </html>
