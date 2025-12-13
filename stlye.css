@@ -1,39 +1,53 @@
-/* =========================
-   FINAL 3D GLASSMORPHISM CSS
-   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* --- Genel Reset ve Font Ayarları --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #e0eafc, #cfdef3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-/* --- Ana Konteyner --- */
-.container {
-    width: 95%;
-    max-width: 960px;
-    height: 90vh;
-    background: rgba(255, 255, 255, 0.12);
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
+body, html{width:100%; height:100%; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); overflow:hidden;}
+.background{display:flex; justify-content:center; align-items:center; height:100vh; perspective:1200px;}
+.container{
+    width:450px; max-width:90%; height:80%;
+    background: rgba(255,255,255,0.05); border-radius:25px;
     backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-radius: 24px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 30px rgba(0,0,0,0.05) inset;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow:0 8px 32px rgba(0,0,0,0.6);
+    display:flex; flex-direction:column; transform-style: preserve-3d;
+    transition: transform 0.3s ease;
 }
-
-/* --- Başlık --- */
-.header {
-    background: rgba(26, 47, 74, 0.85);
+.container:hover{transform: rotateY(5deg) rotateX(3deg) scale(1.02);}
+.header{padding:20px;text-align:center;color:#fff;text-shadow: 0 0 10px rgba(0,0,0,0.5);}
+.header h1{font-size:1.8rem;margin-bottom:5px;}
+.header p{font-size:0.95rem; opacity:0.8;}
+.chat-window{flex:1;padding:15px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;}
+@keyframes popIn {
+    0% {opacity:0; transform: translateY(20px) rotateX(15deg) scale(0.8);}
+    60% {opacity:1; transform: translateY(-5px) rotateX(-5deg) scale(1.05);}
+    100% {opacity:1; transform: translateY(0) rotateX(0deg) scale(1);}
+}
+.message{
+    max-width:80%; padding:12px 18px; border-radius:20px;
+    backdrop-filter: blur(10px) saturate(180%);
+    background: rgba(255,255,255,0.1); color:#fff; font-size:0.95rem;
+    box-shadow:0 4px 15px rgba(0,0,0,0.3);
+    transform-style: preserve-3d;
+    animation: popIn 0.5s ease forwards;
+    word-wrap: break-word;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.message.user{align-self:flex-end; background: rgba(255,255,255,0.25); color:#000; font-weight:600;}
+.message.user:hover{transform: rotateY(5deg) scale(1.02); box-shadow:0 6px 20px rgba(0,0,0,0.5);}
+.message.ai{align-self:flex-start; background: rgba(255,255,255,0.12);}
+.input-area{display:flex; padding:15px; gap:10px; background: rgba(255,255,255,0.05);
+    border-top:1px solid rgba(255,255,255,0.2); backdrop-filter: blur(15px) saturate(180%);
+    border-bottom-left-radius:25px; border-bottom-right-radius:25px;
+}
+.input-area input{flex:1; padding:12px 15px; border-radius:20px; border:none; outline:none;
+    background: rgba(255,255,255,0.15); color:#fff; font-size:0.95rem;
+    backdrop-filter: blur(10px) saturate(180%); transition: all 0.3s ease;}
+.input-area input:focus{background: rgba(255,255,255,0.25);}
+.input-area button{padding:12px 20px; border:none; border-radius:20px;
+    background: linear-gradient(135deg,#00f0ff,#0050ff); color:#fff; font-weight:700;
+    cursor:pointer; transition: all 0.3s ease; box-shadow:0 4px 15px rgba(0,0,0,0.4);}
+.input-area button:hover{transform: scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,0.6);}
+.chat-window::-webkit-scrollbar{width:8px;}
+.chat-window::-webkit-scrollbar-track{background:transparent;}
+.chat-window::-webkit-scrollbar-thumb{background: rgba(255,255,255,0.2); border-radius:4px;}
+.definition-block{margin-top:5px; font-size:0.9rem; line-height:1.3;}
+.typing-indicator{display:none; font-size:0.9rem; color:#fff; padding-left:10px; opacity:0.8;}
